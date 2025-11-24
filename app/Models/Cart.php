@@ -11,7 +11,7 @@ class Cart extends Model
     public $products = null;
     public $totalPrice = 0;
     public $totalQuanty = 0;
-    public function __construct($cart)
+    public function __construct($cart = null)
     {
         if($cart)
         {

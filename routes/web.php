@@ -11,16 +11,74 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
+
+//users
+Route::get('/', [PageController::class, 'index'])->name('index');
+
+Route::get('/about', [PageController::class, 'getAbout'])->name('index.getAbout');
+
+Route::get('/{slug}&id={id}', [PageController::class, 'getCategory'])->name('index.getCategory');
+Route::get('/contact-us', [PageController::class, 'getContact'])->name('index.getContact');
+
+Route::get('brand/{slug}&id={id}', [PageController::class, 'getBrand'])->name('index.getBrand');
+
+Route::get('/product/{product_slug}&id={product_id}', [PageController::class, 'getProductDetail'])->name('index.getProductDetail');
+
+Route::get('/slide', [PageController::class, 'getSlide'])->name('index.getSlide');
+
+Route::get('/blog/{blog_slug}&id={blog_id}', [PageController::class, 'getBlog'])->name('index.getBlog');
+
+Route::get('/product', [PageController::class, 'getProduct'])->name('index.getProduct');
+
+Route::get('/search', [PageController::class, 'getSearch'])->name('index.getSearch');
+
+Route::prefix('checkout')->middleware('payment')->group(function () {
+    Route::post('/checkout', [PageController::class, 'postCheckout'])->name('index.postCheckout');
+    Route::get('/check-out', [PageController::class, 'getCheckout'])->name('index.getCheckOut');
+});
+
+Route::get('/notify', [PageController::class, 'getSuccess'])->name('index.getSuccess');
+
+Route::prefix('cart')->group(function (){
+    Route::get('/', [CartController::class, 'index'])->name('cart.index');
+
+    Route::get('/add-cart/{id}', [CartController::class, 'addCart'])->name('cart.addCart');
+
+    Route::get('/delete-cart/{id}', [CartController::class, 'getDelete'])->name('cart.DeleteItemCart');
+    Route::get('/delete-list/{id}', [CartController::class, 'DeleteItemListCart'])->name('cart.DeleteItemListCart');
+
+    Route::get('/update-cart/{id}/{quanty}', [CartController::class, 'updateCart'])->name('cart.UpdateItemListCart');
+
+});
+
+Route::prefix('profile')->middleware('user.login')->group(function () {
+    Route::get('/my_acc', [PageController::class, 'getAccount'])->name('index.getAccount');
+
+    Route::get('/profile', [AuthController::class, 'getProfile'])->name('index.getProfile');
+    Route::post('/profile', [AuthController::class, 'editProfile'])->name('index.editProfile');
+
+    Route::get('/cancel-order/{id}', [CheckOutController::class, 'cancelOrder'])->name('admin.checkout.cancelOrder');
+
+    Route::post('/change-password', [AuthController::class, 'postUserPassword'])->name('index.postUserPassword');
+
+    Route::get('/logout', [AuthController::class, 'userLogout'])->name('index.logout');
+});
+
+//userlogin
+Route::get('/login', [PageController::class, 'getLogin'])->name('index.login');
+Route::post('/login', [AuthController::class, 'postUserLogin'])->name('index.postUserLogin');
+
+Route::get('/register', [PageController::class, 'getRegister'])->name('index.register');
+Route::post('/register', [AuthController::class, 'postUserRegister'])->name('index.postUserRegister');
 
 // admin
 //Public Routes
 Route::get('admin/login', [AuthController::class, 'adminLogin'])->name('admin.login');
 Route::post('admin/login', [AuthController::class, 'postAdminLogin'])->name('admin.postLogin');
-
 
 //Protected Routes
 Route::prefix('admin')->middleware('admin.login')->group(function () {
@@ -35,7 +93,6 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
     Route::prefix('customer')->group(function () {
         Route::get('/', [CustomerController::class, 'index'])->name('admin.customer.index');
     });
-
 
     Route::prefix('staff')->middleware('admin.role')->group(function () {
         Route::get('/', [StaffController::class, 'index'])->name('admin.staff.index');
@@ -161,5 +218,10 @@ Route::prefix('admin')->middleware('admin.login')->group(function () {
         Route::get('chart-3', [StatisticController::class, 'loadChart3'])->name('admin.statistic.loadChart3');
     
     });    
-
 });
+
+
+ // Reset password
+ Route::get('/verification-emai-customer',[CustomerController::class, 'getVerifyEmail'])->name('clients.verifyEmail');
+ Route::post('/verification-emai-customer',[CustomerController::class, 'verifyEmailCustomer']);
+ Route::post('/register-customer',[CustomerController::class, 'postRegister'])->name('clients.postUserRegister');
