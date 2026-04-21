@@ -74,8 +74,7 @@
                     <h2>CONTACT INFO</h2>
                     <ul>
                         <li>
-                            <p><i class="fas fa-map-marker-alt"></i>Address: TTTM LONG TƠ Đường Lam Sơn, TK Lê
-                                xá 1, Thị trấn Nông Cống, Nông Cống, Thanh Hoá, Thanh Hóa, Vietnam
+                            <p><i class="fas fa-map-marker-alt"></i>Address: TTTM MINHDANG Đường 3/2, Quận Ninh Kiều, TP.Cần Thơ
                             </p>
                         </li>
                         <li>
@@ -84,11 +83,11 @@
                         </li>
                         <li>
                             <p><i class="fas fa-envelope"></i>Email: <a
-                                    href="mailto:longtoplaza@gmail.com">longtoplaza@gmail.com</a></p>
+                                    href="mailto:minhdang@gmail.com">minhdang@gmail.com</a></p>
                         </li>
                         <li>
                             <p><i class="fab fa-facebook"></i> <a
-                                    href="https://www.facebook.com/longtoplaza">Facebook</a></p>
+                                    href="https://www.facebook.com/minhdang">Facebook</a></p>
                         </li>
                     </ul>
                 </div>

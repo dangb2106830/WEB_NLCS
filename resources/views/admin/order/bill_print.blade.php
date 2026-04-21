@@ -9,7 +9,7 @@
     <!-- Styles -->
     <style>
         body {
-            font-family: 'arial',
+            font-family: 'DejaVu Sans', sans-serif;
         }
         .header{
             text-align: center;

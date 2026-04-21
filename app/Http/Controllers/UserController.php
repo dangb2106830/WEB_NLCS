@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -35,6 +36,11 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        $staff = Staff::where('user_id', '=', $id)->get();
+        foreach ($staff as $item) {
+            $item->delete();
+        }
+        User::destroy($id);
+        return redirect()->back()->with('Thông báo', 'Xoá thành công!');
     }
 }

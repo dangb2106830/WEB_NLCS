@@ -24,15 +24,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="banner-frame"> <img class="img-fluid" src="/front/assets/images/plz.jpg" alt="" />
+                <div class="banner-frame"> <img class="img-fluid" src="/front/assets/images/sieuthi.jpg" alt="" />
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="noo-sh-title-top">Giới thiệu <span>CÔNG TY TNHH LONG TƠ</span></h2>
-                <p>Công ty TNHH Long Tơ là một trong những công ty đi đầu trong lĩnh vực kinh doanh hàng tiêu dùng, đồ
-                    gia dụng, xe máy, xe đạp điện, xe máy điện có hệ thống showroom trải rộng trên khắp địa bàn Huyện
-                    Nông Cống.
-                    Sau khi thành lập Công ty, Long Tơ đã không ngừng tiến hóa toàn bộ bộ máy tổ chức, cải tiến công
+                <h2 class="noo-sh-title-top">Giới thiệu <span>CÔNG TY TNHH MINHDANG</span></h2>
+                <p>Công ty TNHH MINHDANG là một trong những công ty đi đầu trong lĩnh vực kinh doanh hàng tiêu dùng, đồ
+                    gia dụng, xe máy, xe đạp điện, xe máy điện có hệ thống showroom trải rộng trên khắp địa bàn TP.Cần Thơ.
+                    Sau khi thành lập Công ty, MINHDANG đã không ngừng tiến hóa toàn bộ bộ máy tổ chức, cải tiến công
                     nghệ, đầu tư trang thiết bị đem lại hiệu quả cao nhất cho công việc.
                     Với sự dồi dào về nguồn hàng, chúng tôi khẳng định thương hiệu và chất lượng của mình trong từng sản
                     phẩm.
@@ -48,24 +47,24 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
                     <h3>Quý khách nhận được gì?</h3>
-                    <p>Đến với Long Tơ Quý khách hàng sẽ được thỏa sức trải nghiệm và chọn lựa các mẫu sản phẩm mới
+                    <p>Đến với MINHDANG Quý khách hàng sẽ được thỏa sức trải nghiệm và chọn lựa các mẫu sản phẩm mới
                         nhất, hot
-                        nhất trên thị trường hiện nay từ các thương hiệu uy tín tại Việt Nam. Tới Long Tơ các bạn không
+                        nhất trên thị trường hiện nay từ các thương hiệu uy tín tại Việt Nam. Tới MINHDANG các bạn không
                         phải lo lắng về vấn đề
-                        chất lượng sản phẩm, tất cả các dòng xe tại Long Tơ luôn là sản phẩm chính hãng, có nguồn gốc
+                        chất lượng sản phẩm, tất cả các dòng xe tại MINHDANG luôn là sản phẩm chính hãng, có nguồn gốc
                         xuất xứ rõ ràng, giá cả cạnh tranh, chế độ bảo hành, bảo trì sản phẩm hết sức chu đáo. Đặc biệt
-                        Long Tơ luôn cập nhật những mẫu sản phẩm mới nhất và có các chương trình khuyến mãi đặc sắc: giá
+                        MINHDANG luôn cập nhật những mẫu sản phẩm mới nhất và có các chương trình khuyến mãi đặc sắc: giá
                         cả ưu
-                        đãi, quà tặng phong phú tới Khách hàng. Thương hiệu Long Tơ đã trở nên quen thuộc, đồng thời tạo
+                        đãi, quà tặng phong phú tới Khách hàng. Thương hiệu MINHDANG đã trở nên quen thuộc, đồng thời tạo
                         dựng được sự tin tưởng và hài lòng của Quý khách hàng. </p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="service-block-inner">
-                    <h3>Tôn chỉ của Long Tơ là gì?</h3>
-                    <p>Tất cả các nhân viên trong Hệ thống Long Tơ đều thấu hiểu: “Khách hàng mới là người quyết định
+                    <h3>Tôn chỉ của MINHDANG là gì?</h3>
+                    <p>Tất cả các nhân viên trong Hệ thống MINHDANG đều thấu hiểu: “Khách hàng mới là người quyết định
                         tương lai, sự tồn tại và phát triển của Hệ Thống bán lẻ các mặt hàng đồ gia dụng và xe máy, xe
-                        điện Long Tơ”. Vì vậy, toàn thể nhân viên Long Tơ luôn tâm niệm và làm việc theo suy nghĩ:
+                        điện MINHDANG”. Vì vậy, toàn thể nhân viên MINHDANG luôn tâm niệm và làm việc theo suy nghĩ:
                         “Hãy phục vụ Khách hàng như chúng ta đang
                         phục vụ chính bản thân chúng ta!”. </p>
                 </div>
@@ -75,8 +74,8 @@
                     <h3>Mục Tiêu Phát Triển?</h3>
                     <p> – Trở thành Công ty có hệ thống bán hàng có quy mô, chuyên nghiệp và
                         lớn
-                        mạnh nhất Nông Cống nói riêng và Thanh Hóa nói chung. </p>
-                    <p>– Xây dựng Long Tơ trở thành một môi trường làm việc chuyên nghiệp, nơi mà mọi cá nhân có thể
+                        mạnh nhất Cần Thơ nói riêng và Thanh Hóa nói chung. </p>
+                    <p>– Xây dựng MINHDANG trở thành một môi trường làm việc chuyên nghiệp, nơi mà mọi cá nhân có thể
                         phát huy tối đa sức sáng tạo, khả năng và cơ hội làm chủ thực sự với một tinh thần dân chủ cao.
                     </p>
                     <p>– Đặt lợi ích của khách hàng lên trên lợi nhuận. Luôn hướng tới khách hàng, lắng nghe ý kiến,
@@ -85,7 +84,7 @@
                         Sự tin tưởng và ủng hộ của khách hàng trong thời gian qua là động lực để công ty tiếp tục phát
                         triển và hoàn thiện hơn.
 
-                        Để được tư vấn và mua xe chính hãng, các bạn hãy đến với chúng tôi. Hệ thống LONG TƠ PLAZA
+                        Để được tư vấn và mua xe chính hãng, các bạn hãy đến với chúng tôi. Hệ thống MINHDANG
                         Chúng tôi đảm bảo sẽ không làm các bạn phải thất vọng. </p>
                 </div>
             </div>

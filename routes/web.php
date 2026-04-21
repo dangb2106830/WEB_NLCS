@@ -35,6 +35,7 @@ Route::get('/blog/{blog_slug}&id={blog_id}', [PageController::class, 'getBlog'])
 Route::get('/product', [PageController::class, 'getProduct'])->name('index.getProduct');
 
 Route::get('/search', [PageController::class, 'getSearch'])->name('index.getSearch');
+Route::post('/ai/chat', AIChatController::class)->name('ai.chat');
 
 Route::prefix('checkout')->middleware('payment')->group(function () {
     Route::post('/checkout', [PageController::class, 'postCheckout'])->name('index.postCheckout');

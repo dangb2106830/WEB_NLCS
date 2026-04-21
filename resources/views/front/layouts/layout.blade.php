@@ -16,10 +16,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="/front/assets/images/LT.PNG" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/front/assets/images/longto.PNG">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
@@ -71,7 +67,7 @@
                                     <i class="fab fa-opencart"></i> Giảm giá ưu đãi lên đến 80%
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Bốc thăm trúng thưởng mừng sinh nhật Long Tơ
+                                    <i class="fab fa-opencart"></i> Bốc thăm trúng thưởng mừng sinh nhật MINHDANG
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Thanh lí các loại mặt hàng giảm giá sốc
@@ -80,14 +76,14 @@
                                     <i class="fab fa-opencart"></i> Hàng ngàn sản phẩm mới về
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Chào mừng bạn đến với Long Tơ
+                                    <i class="fab fa-opencart"></i> Chào mừng bạn đến với MINHDANG
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Sự chuyên nghiệp và uy tín là tôn chỉ của chúng tôi
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Khách hàng mới là người quyết định tương lai, phát
-                                    triển của Long Tơ
+                                    triển của MINHDANG
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Luôn hướng tới khách hàng, lắng nghe ý kiến, nhu cầu
@@ -115,8 +111,7 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="{{route('index')}}"><img src="/front/assets/images/LONGTO.png"
-                            class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{route('index')}}" style="font-weight:700">MINGDANG.VN</a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -223,7 +218,7 @@
                                 </li>
                                 <li>
                                     <p><i class="fas fa-envelope"></i>Email: <a
-                                            href="mailto:thanhkien2021008@gmail.com">thanhkien2021008@gmail.com</a></p>
+                                            href="mailto:minhdang@gmail.com">minhdang@gmail.com</a></p>
                                 </li>
                                 <li>
                                     <p><i class="fab fa-facebook"></i> <a
@@ -243,6 +238,8 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    @include('front.partials.chatbot')
 
     <!-- ALL JS FILES -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -275,18 +272,33 @@
 
     <script>
     function addCart(id) {
-        console.log(id)
+        let quantity = document.getElementById('quantity').value;
+
         $.ajax({
             url: '/cart/add-cart/' + id,
-            type: 'GET',
-        }).done(function(response) {
-            if (response) {
-                RenderLishCart(response);
-                alertify.success('Đã thêm mới sản phẩm');
+            type: 'GET', // tạm giữ, dù POST sẽ tốt hơn
+            dataType: 'json',
+            data: { quantity: quantity },
+        })
+        .done(function (res) {
+
+            if (res.status === 'success') {
+                RenderLishCart(res.html);
+                alertify.success(res.message);
+
+            } else if (res.status === 'partial') {
+                RenderLishCart(res.html);
+                alertify.warning(res.message);
+
             } else {
-                alertify.warning('Sản phẩm đã hết');
+                alertify.error(res.message || 'Không thể thêm sản phẩm');
             }
         })
+        .fail(function (xhr) {
+            alertify.error(
+                xhr.responseJSON?.message || 'Lỗi hệ thống, vui lòng thử lại'
+            );
+        });
     }
 
     function DeleteItemCart(id) {

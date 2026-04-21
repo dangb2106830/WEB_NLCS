@@ -14,21 +14,48 @@ class CartController extends Controller
         $pro = Product::all();
         return view('front.cart', compact('pro'));
     }
-    public function addCart(Request $request, $id) {
+   public function addCart(Request $request, $id)
+    {
+        $requestQty = max(1, (int) $request->quantity);
+
         $product = DB::table('products')->where('id', $id)->first();
-        
-        if ($product != null) {
-            $oldcart = Session('Cart') ? Session('Cart') : null;
-            if ((!$oldcart || $oldcart->totalQuanty < $product->quantity )&& $product->quantity >0){
-                $newcart = new Cart($oldcart);
-                $newcart->addCart($product, $id);
-                $request->session()->put('Cart', $newcart);
-                return view('front.cart');
-            }
-            else{
-                return false;
-            }
+        if (!$product || $product->quantity <= 0) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Sản phẩm không khả dụng'
+            ], 400);
         }
+
+        $oldCart = session('Cart');
+        $currentQtyInCart = 0;
+
+        if ($oldCart && isset($oldCart->products[$id])) {
+            $currentQtyInCart = $oldCart->products[$id]['quanty'];
+        }
+
+        $available = $product->quantity - $currentQtyInCart;
+
+        if ($available <= 0) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Sản phẩm đã đạt số lượng tối đa trong giỏ'
+            ], 400);
+        }
+
+        $addQty = min($requestQty, $available);
+
+        $newCart = new Cart($oldCart);
+        $newCart->AddCart($product, $id, $addQty);
+        session()->put('Cart', $newCart);
+
+        return response()->json([
+            'status' => $addQty < $requestQty ? 'partial' : 'success',
+            'added' => $addQty,
+            'message' => $addQty < $requestQty
+                ? "Đã thêm được {$addQty} sản phẩm do giới hạn tồn kho"
+                : 'Đã thêm sản phẩm vào giỏ',
+            'html' => view('front.layouts.list_cart')->render()
+        ]);
     }
 
     public function getDelete(Request $request, $id) {

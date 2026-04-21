@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-3 register-left">
             <!-- <img src="https:/image.ibb.co/n7oTvU/logo_white.png" alt="" /> -->
-            <h3>Chào mừng đến với Long Tơ</h3>
+            <h3>Chào mừng đến với MINHDANG</h3>
             <p>Đăng nhập ngay nào!</p>
             <button
                 style="border-radius: 1.5rem; font-weight: 600; width: 50%; border: none; margin-top: 10%; padding: 2%;"><a

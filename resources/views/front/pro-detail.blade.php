@@ -85,12 +85,17 @@
                                 <p> {!!$product->description!!}</p>
                             </h4>
                         </div>
+                        <span>Chọn số lượng:</span>
+                        <select name="quantity" id="quantity">
+                            @for ($i = 1; $i <= $product->quantity; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                        </select>
                         <div class="price-box-bar">
                             <div class="cart-and-bay-btn">
 
                                 <a class="btn hvr-hover" href="#" onclick="addCart({{ $product->id }})"
                                     data-id="{{ $product->id }}">Thêm vào giỏ hàng</a>
-
                             </div>
                         </div>
                 </div>

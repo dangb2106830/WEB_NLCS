@@ -30,6 +30,7 @@
                                         <th>Địa chỉ</th>
                                         <th>Ngày sinh</th>
                                         <th>Số điện thoại</th>
+                                        <th>Chức năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +44,9 @@
                                         <td>{{ $cus->address}}</td>
                                         <td>{{ date('d/m/Y', strtotime($cus->birth_day)) }}</td>
                                         <td>{{ $cus->phone }}</td>
+                                        <td>
+                                            <a class="btn btn-danger btn-xs"  onclick="return ConfirmDelete()" href="{{ route('admin.user.destroy', ['id' => $cus->user_id]) }}" ​><i class="fa fa-edit"></i> Xoá</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                              

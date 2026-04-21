@@ -41,17 +41,17 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/hehe.jpg" alt="" />
+                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/GD1.png" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/lthe.png" alt="" />
+                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/GD2.png" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/tv.png" alt="" />
+                        <img class="img-fluid" style="height: 200px;" src="/front/assets/images/GD3.jpg" alt="" />
                     </div>
                 </div>
             </div>

@@ -20,28 +20,30 @@ class Cart extends Model
             $this->totalQuanty= $cart->totalQuanty;
         }
     }
-    public function AddCart($product, $id)
+    public function AddCart($product, $id, $quantity = 1)
     {
-        $newProduct = [
-            'quanty' =>0,
-            'price'=>$product->discount ? $product->discount : $product->price, 
-            'productInfo'=>$product
-        ];
-    
-        if($this ->products)
-        {
-            if(array_key_exists($id, $this ->products))
-            {
-                $newProduct= $this ->products[$id];
-            }
-        }
-        $newProduct['quanty']++;
-        $newProduct['price']= $newProduct['quanty'] * $product->price;
-        $this->products[$id]= $newProduct;
-        $this->totalPrice += $product->discount ? $product->discount : $product->price;
-        $this->totalQuanty++;
+        $unitPrice = $product->discount ? $product->discount : $product->price;
 
+        $newProduct = [
+            'quanty' => 0,
+            'price' => 0,
+            'productInfo' => $product
+        ];
+
+        if ($this->products && array_key_exists($id, $this->products)) {
+            $newProduct = $this->products[$id];
+        }
+
+        // cộng đúng số lượng
+        $newProduct['quanty'] += $quantity;
+        $newProduct['price'] = $newProduct['quanty'] * $unitPrice;
+
+        $this->products[$id] = $newProduct;
+
+        $this->totalQuanty += $quantity;
+        $this->totalPrice += $unitPrice * $quantity;
     }
+
     public function DeleteItemCart($id){
         $this->totalQuanty -=$this->products[$id]['quanty'];
         $this->totalPrice -= $this ->products[$id]['price'];

@@ -31,4 +31,14 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'gemini' => [
+        'api_key' => env('GEMINI_API_KEY'),
+        'base_url' => env('GEMINI_API_BASE_URL', 'https://generativelanguage.googleapis.com/v1beta'),
+        'embedding_model' => env('GEMINI_EMBEDDING_MODEL', 'gemini-embedding-001'),
+        'chat_model' => env('GEMINI_CHAT_MODEL', 'gemini-2.5-flash'),
+        'chat_temperature' => (float) env('GEMINI_CHAT_TEMPERATURE', 0.2),
+        'chat_max_output_tokens' => (int) env('GEMINI_CHAT_MAX_OUTPUT_TOKENS', 512),
+        'chat_min_score' => (float) env('GEMINI_CHAT_MIN_SCORE', 0.65),
+    ],
+
 ];

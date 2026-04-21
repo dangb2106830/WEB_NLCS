@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        if (Schema::hasTable('products') && ! Schema::hasColumn('products', 'embedding')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->longText('embedding')->nullable()->after('status');
+            });
+        }
+
+        if (Schema::hasTable('blogs') && ! Schema::hasColumn('blogs', 'embedding')) {
+            Schema::table('blogs', function (Blueprint $table) {
+                $table->longText('embedding')->nullable()->after('updated_at');
+            });
+        }
+    }
+
+    public function down(): void
+    {
+        if (Schema::hasTable('products') && Schema::hasColumn('products', 'embedding')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->dropColumn('embedding');
+            });
+        }
+
+        if (Schema::hasTable('blogs') && Schema::hasColumn('blogs', 'embedding')) {
+            Schema::table('blogs', function (Blueprint $table) {
+                $table->dropColumn('embedding');
+            });
+        }
+    }
+};
